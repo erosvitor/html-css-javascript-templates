@@ -1,0 +1,131 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.keyboard {
+  width: min-content;
+  border: 5px solid black;
+  border-radius: 25px;
+  padding: 25px 25px 0px 25px;
+  background-color: #555;
+}
+
+.keyboard-components {
+  margin-bottom: 20px;
+  background-color: #444;
+  display: flex;
+}
+
+.speaker-left {
+  width: 200px;
+  height: 120px;
+  border: 1px solid #000;
+  background: url("images/carbon-fibre.png");
+}
+
+.control-panel {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #000;
+  padding-top: 10px;
+  background-color: #555;
+  flex-grow: 1;
+  display: flex;
+}
+
+.button-on-off {
+	width: 45px;
+	height: 65px;
+	position: relative;
+  flex-grow:1;
+  display: flex;
+  justify-content: center;
+}
+
+.display-notes {
+  width: 300px;
+  height: 100px;
+  border: 2px solid #000;
+  padding: 5px;
+  background-color: #000;
+  color: #fff;
+  overflow-y: auto;
+  flex-grow: 2;
+}
+
+.display-notes-on {
+  background-color: #4666ff;
+}
+
+.button-volume {
+  width: 45px;
+  height: 65px;
+  flex-grow: 1;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera (but keep functionality) */
+.display-notes::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox (but keep functionality) */
+.display-notes {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.speaker-right {
+  width: 200px;
+  height: 120px;
+  border: 1px solid #000;
+  background: url("images/carbon-fibre.png");
+}
+
+.keyboard-keys {
+  display: flex;
+}
+
+.octave {
+  position: relative;
+  display: flex;  
+}
+
+.key-white {
+  width: 50px;
+  height: 230px;
+  border: 1px solid #000;
+  background-color: #fff;
+}
+
+.key-black {
+  width: 30px;
+  height: 120px;
+  position: absolute;
+  background-color: #000;
+}
+
+[cs] {
+  left: 35px; /* white key whidth - half width black key */
+}
+
+[ds] {
+  left: 85px; /* width two white keys - half width black key */
+}
+
+[fs] {
+  left: 185px;
+}
+
+[gs] {
+  left: 235px;
+}
+
+[as] {
+  left: 285px;
+}
+
+.key-selected {
+  background-color: #070;
+}
+

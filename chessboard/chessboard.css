@@ -1,0 +1,53 @@
+:root {
+  --square-width: 60px;
+  --square-height: 60px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ccc;
+}
+
+.board {
+  width: calc(var(--square-width) * 8);
+  margin: 20px;
+}
+
+.legends-horizontal {
+  display: flex;
+}
+
+.legend-horizontal {
+  width: var(--square-width);
+  height: 30px;
+  text-align: center;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.squares {
+  border: 1px solid black;
+}
+
+.line {
+  display: flex;
+}
+
+.square {
+  width: var(--square-width);
+  height: var(--square-height);
+}
+
+.square-black {
+  background-color: #000;  
+}
+
+.square-white {
+  background-color: #fff;  
+}

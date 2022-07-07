@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Musical keyboard</title>
+  <link rel="stylesheet" href="musicalkeyboard.css" />
+  <link rel="stylesheet" href="buttononoff.css" />
+</head>
+<body>
+<div class="keyboard">
+  <div class="keyboard-components">
+    <div class="speaker-left">
+    </div>
+    <div class="control-panel">
+      <div class="button-on-off">
+        <a href="#" id="button-on-off">&#xF011;</a><span></span>
+      </div>
+      <div id="display-notes" class="display-notes">
+      </div>
+      <div class="button-volume">
+      </div>
+    </div>
+    <div class="speaker-right">
+    </div>
+  </div>
+
+  <div class="keyboard-keys">
+    <div class="octave">
+      <div class="key-white" c></div>
+      <div class="key-black" cs></div>
+      <div class="key-white" d></div>
+      <div class="key-black" ds></div>
+      <div class="key-white" e></div>
+      <div class="key-white" f></div>    
+      <div class="key-black" fs></div>
+      <div class="key-white" g></div>
+      <div class="key-black" gs></div>
+      <div class="key-white" a></div>
+      <div class="key-black" as></div>
+      <div class="key-white" b></div>
+    </div>
+    <div class="octave">
+      <div class="key-white" c></div>
+      <div class="key-black" cs></div>
+      <div class="key-white" d></div>
+      <div class="key-black" ds></div>
+      <div class="key-white" e></div>
+      <div class="key-white" f></div>    
+      <div class="key-black" fs></div>
+      <div class="key-white" g></div>
+      <div class="key-black" gs></div>
+      <div class="key-white" a></div>
+      <div class="key-black" as></div>
+      <div class="key-white" b></div>
+    </div>
+    <div class="octave">
+      <div class="key-white" c></div>
+      <div class="key-black" cs></div>
+      <div class="key-white" d></div>
+      <div class="key-black" ds></div>
+      <div class="key-white" e></div>
+      <div class="key-white" f></div>    
+      <div class="key-black" fs></div>
+      <div class="key-white" g></div>
+      <div class="key-black" gs></div>
+      <div class="key-white" a></div>
+      <div class="key-black" as></div>
+      <div class="key-white" b></div>
+    </div>  
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script>
+var displayNotes = document.getElementById('display-notes')
+var keyboardIsOn = false;
+
+const keys = document.querySelectorAll(".octave > div")
+keys.forEach(function(keyPressed) {
+  keyPressed.onmousedown = function() {
+    if (keyboardIsOn) {
+      keyPressed.classList.add("key-selected")
+      showMusicalNote(keyPressed)
+    }
+  }
+  keyPressed.onmouseup = function() {
+    if (keyboardIsOn) {
+      keyPressed.classList.remove("key-selected")
+    }
+  }
+  keyPressed.onmouseleave = function() {
+    if (keyboardIsOn) {
+      keyPressed.classList.remove("key-selected")
+    }
+  }
+})
+
+function showMusicalNote(keyPressed) {
+  var note = null
+  if (keyPressed.hasAttribute('c')) {
+    note = 'DÓ'
+  } else if (keyPressed.hasAttribute('d')) {
+    note = 'RÉ'
+  } else if (keyPressed.hasAttribute('e')) {
+    note = 'MI'
+  } else if (keyPressed.hasAttribute('f')) {
+    note = 'FÁ'
+  } else if (keyPressed.hasAttribute('g')) {
+    note = 'SOL'
+  } else if (keyPressed.hasAttribute('a')) {
+    note = 'LÁ'
+  } else if (keyPressed.hasAttribute('b')) {
+    note = 'SI'
+  }
+  if (note !== null) {
+    if (displayNotes.innerHTML.length === 0) {
+      displayNotes.innerHTML = note;
+    } else {
+      displayNotes.innerHTML += ' ' + note
+      displayNotes.scrollTop = displayNotes.scrollHeight
+    }
+  }
+}
+
+$(document).ready(function() {
+  $('#button-on-off').click(function() {
+	  $(this).toggleClass('on')
+    $('#display-notes').toggleClass('display-notes-on')
+    $('#display-notes').empty()
+    keyboardIsOn = $('#button-on-off').hasClass('on')
+  })
+
+  $('#display-notes').dblclick(function() {
+    $(this).empty()
+  }) 
+})
+</script>
+</html>
+
+
+

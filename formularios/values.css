@@ -1,0 +1,11 @@
+:root {
+  --color-border: #a3a3a3;
+  --color-border-inputs: #ccc;
+  --color-background-inputs: #fff;
+  --color-background-button: #4CAF50;
+  --color-background-button-hover: #45a049;
+  --color-background-header-table: #4CAF50;
+  --color-zebra-striping: #dbefdc;
+  --color-border-table: #ddd;
+}
+

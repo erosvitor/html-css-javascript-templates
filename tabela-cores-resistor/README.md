@@ -1,0 +1,2 @@
+![](tabelacoresresistor.png)
+

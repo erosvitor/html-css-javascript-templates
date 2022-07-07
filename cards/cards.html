@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Cards</title>
+  <link rel="stylesheet" href="cards.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="locations"></div>
+<script src="cards.js"></script>
+<script>
+  var locations = [];
+  locations.push({'name':'Localidade 01', 'equipments':[]});
+  locations[0].equipments.push({'name':'EQUIP-01', 'ip':'192.168.200.100', 'status':'Ativo', 'lastread':'18/09/2020 16:53/20', 'lastidregister':'123456789'});
+  locations[0].equipments.push({'name':'EQUIP-01', 'ip':'192.168.200.100', 'status':'Offline', 'lastread':'18/09/2020 16:53/20', 'lastidregister':'123456789'});
+  locations[0].equipments.push({'name':'EQUIP-01', 'ip':'192.168.200.100', 'status':'Ativo', 'lastread':'18/09/2020 16:53/20', 'lastidregister':'123456789'});
+  locations.push({'name':'Localidade 02', 'equipments':[]}); 
+  locations[1].equipments.push({'name':'EQUIP-01', 'ip':'192.168.200.100', 'status':'Offline', 'lastread':'18/09/2020 16:53/20', 'lastidregister':'123456789'});
+  locations[1].equipments.push({'name':'EQUIP-01', 'ip':'192.168.200.100', 'status':'Ativo', 'lastread':'18/09/2020 16:53/20', 'lastidregister':'123456789'});
+  locations[1].equipments.push({'name':'EQUIP-01', 'ip':'192.168.200.100', 'status':'Ativo', 'lastread':'18/09/2020 16:53/20', 'lastidregister':'123456789'});
+  locations[1].equipments.push({'name':'EQUIP-01', 'ip':'192.168.200.100', 'status':'Ativo', 'lastread':'18/09/2020 16:53/20', 'lastidregister':'123456789'});
+
+  drawCards(locations);
+</script>
+</body>
+</html>
